@@ -24,7 +24,7 @@ a{color:var(--blue)}
 header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;gap:18px;min-height:64px;flex-wrap:wrap}
 .logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;letter-spacing:.22em;font-size:18px;direction:ltr;color:var(--ink);text-decoration:none}
-.logo b{width:24px;height:24px;border-radius:7px;background:linear-gradient(135deg,var(--blue) 50%,var(--teal) 50%)}
+.logo img{display:block;height:40px;width:auto}
 .links{display:flex;gap:18px;margin-inline-start:auto;font-size:15px;flex-wrap:wrap}
 .links a{color:var(--ink-2);text-decoration:none;font-weight:500}
 .links a:hover,.links a.on{color:var(--blue)}
@@ -38,6 +38,9 @@ header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdro
 .pill i{width:9px;height:9px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px var(--teal-t)}
 .hero h1{font-size:clamp(40px,6.4vw,72px);font-weight:700;letter-spacing:-.025em;margin-block:20px 18px;max-width:16ch}
 .hero h1 .accent{color:var(--blue)}
+.hero .wrap{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+.hero .mascot{width:clamp(180px,24vw,300px);height:auto}
+@media (max-width:760px){.hero .wrap{grid-template-columns:1fr}.hero .mascot{order:-1;width:150px}}
 .hero .btn{margin-top:28px}
 .ribbon{background:var(--blue);color:#fff}
 .ribbon .wrap{display:flex;flex-wrap:wrap;gap:12px 34px;justify-content:center;padding-block:15px;font-family:var(--display);font-weight:600;font-size:15.5px}

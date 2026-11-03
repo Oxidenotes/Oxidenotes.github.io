@@ -81,7 +81,9 @@
     h1.append(document.createTextNode(words.slice(0, -2).join(' ') + (words.length > 2 ? ' ' : '')), el('span', 'accent', words.slice(-2).join(' ')));
     w.append(h1, el('p', 'lead', tx(hero.text)));
     if (tx(hero.button)) { var b = el('a', 'btn', tx(hero.button)); b.href = '#pilot'; w.append(b); }
-    h.append(w); main.append(h);
+    var hw = el('div', 'wrap'); w.className = ''; hw.append(w);
+    var img = el('img', 'mascot'); img.src = 'assets/logo.svg'; img.alt = lang === 'ar' ? 'باندا Oxide بالبالطو ماسك قارورة معمل' : 'The Oxide panda in a lab coat holding a flask'; hw.append(img);
+    h.append(hw); main.append(h);
 
     if (data.ribbon && data.ribbon.length) { var r = el('div', 'ribbon'), rw = el('div', 'wrap'); data.ribbon.forEach(function (x) { if (tx(x)) rw.append(el('span', '', tx(x))); }); r.append(rw); main.append(r); }
 
