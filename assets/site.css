@@ -31,7 +31,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdro
 .lang{font:inherit;font-size:14px;padding:7px 12px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--ink);cursor:pointer}
 .btn{display:inline-flex;align-items:center;font-family:var(--display);font-weight:600;font-size:15px;padding:12px 20px;border-radius:999px;background:var(--blue);color:#fff;text-decoration:none;border:0;cursor:pointer}
 .btn:hover{background:var(--blue-d)}
-@media (max-width:700px){.links{order:3;width:100%;margin:0 0 10px;gap:14px}.nav .lang{margin-inline-start:auto}}
+@media (max-width:700px){.links{order:3;width:100%;margin:0 0 10px;gap:14px}.nav #navcta{margin-inline-start:auto}}
 
 .hero{padding-block:84px 76px;background:linear-gradient(180deg,var(--blue-t),#fff 85%)}
 .pill{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:600;font-size:14px;padding:6px 14px;border-radius:999px;background:#fff;border:1.5px solid var(--line)}
