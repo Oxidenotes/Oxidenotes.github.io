@@ -40,13 +40,17 @@
   {
    "en": "Replies on Telegram",
    "ar": "يرد عليك في تيليجرام"
+  },
+  {
+   "en": "Notes → Word, PowerPoint, Excel",
+   "ar": "ملاحظات ← Word وPowerPoint وExcel"
   }
  ],
  "sections": [
   {
    "id": "problem",
    "layout": "cards",
-   "bg": "white",
+   "bg": "grey",
    "title": {
     "en": "The note you meant to write later…",
     "ar": "الملاحظة اللي قلت بكتبها بعدين…"
@@ -98,7 +102,7 @@
   {
    "id": "how",
    "layout": "steps",
-   "bg": "grey",
+   "bg": "white",
    "title": {
     "en": "From voice to logbook in four steps",
     "ar": "من صوتك لدفترك في أربع خطوات"
@@ -159,9 +163,165 @@
    ]
   },
   {
+   "id": "ask",
+   "layout": "cards",
+   "bg": "grey",
+   "title": {
+    "en": "Ask Oxide anything about your work",
+    "ar": "اسأل Oxide عن أي شي في شغلك"
+   },
+   "lead": {
+    "en": "Send a question by voice or text, in Arabic or English. Oxide searches your notes and your Zotero library and answers with the sources.",
+    "ar": "أرسل سؤالك بصوتك أو بالكتابة، بالعربي أو الإنجليزي. Oxide يدوّر في ملاحظاتك ومكتبة Zotero، ويجاوبك مع المصادر."
+   },
+   "badge": {
+    "en": "",
+    "ar": ""
+   },
+   "items": [
+    {
+     "icon": "🔎",
+     "title": {
+      "en": "Search your notes",
+      "ar": "يدوّر في ملاحظاتك"
+     },
+     "text": {
+      "en": "“Which samples had pinholes this week?” Oxide reads your logbook and tells you, with a link to each day.",
+      "ar": "«وش العينات اللي فيها فراغات هالأسبوع؟» يقرأ لوقاتك ويجاوبك، مع رابط لكل يوم."
+     },
+     "tag": {
+      "en": "Ask in your own words",
+      "ar": "اسأل بكلامك"
+     }
+    },
+    {
+     "icon": "📚",
+     "title": {
+      "en": "Search your Zotero library",
+      "ar": "يدوّر في مكتبة Zotero"
+     },
+     "text": {
+      "en": "“Which papers discuss TiO₂ as an electron transport layer?” It looks through titles, abstracts and authors in Zotero.",
+      "ar": "«وش الأوراق اللي تتكلم عن TiO₂ كطبقة نقل إلكترونات؟» يدوّر في العناوين والملخصات والمؤلفين في Zotero."
+     },
+     "tag": {
+      "en": "Arabic question, English papers",
+      "ar": "سؤال عربي وأوراق إنجليزية"
+     }
+    },
+    {
+     "icon": "🧾",
+     "title": {
+      "en": "Answers with sources",
+      "ar": "جواب مع مصادره"
+     },
+     "text": {
+      "en": "Every fact points to the note or paper it came from, so you can check it. If it isn't in your notes, Oxide says so.",
+      "ar": "كل معلومة معها الملاحظة أو الورقة اللي جت منها عشان تتأكد. وإذا ما كانت موجودة، يقول لك."
+     }
+    },
+    {
+     "icon": "✅",
+     "title": {
+      "en": "Tasks by voice",
+      "ar": "المهام بصوتك"
+     },
+     "text": {
+      "en": "“Tasks today: order SnO₂, finish the methods chapter.” They land in your task list with dates. Say “done …” to tick one off.",
+      "ar": "«مهام اليوم: أطلب SnO₂ وأخلص فصل الطرق» تنضاف لقائمة مهامك بتواريخها. وقل «خلصت…» يعلّم عليها."
+     }
+    }
+   ]
+  },
+  {
+   "id": "workspace",
+   "layout": "cards",
+   "bg": "white",
+   "title": {
+    "en": "Your whole research in one place",
+    "ar": "كل بحثك في مكان واحد"
+   },
+   "lead": {
+    "en": "Oxide lives inside an Obsidian research workspace. You write once in plain notes, and the files your university and supervisor need come out ready.",
+    "ar": "Oxide يشتغل داخل مساحة بحث على Obsidian. تكتب مرة وحدة في ملاحظات عادية، والملفات اللي تحتاجها الجامعة والمشرف تطلع جاهزة."
+   },
+   "badge": {
+    "en": "",
+    "ar": ""
+   },
+   "items": [
+    {
+     "icon": "🎓",
+     "title": {
+      "en": "Thesis → Word",
+      "ar": "الرسالة → Word"
+     },
+     "text": {
+      "en": "Write chapters as notes. One click builds a Word file in your university's template: numbered headings, figures and tables, equations, and the reference list.",
+      "ar": "تكتب الفصول كملاحظات، وبضغطة يطلع ملف Word بقالب جامعتك: عناوين مرقّمة، وصور وجداول، ومعادلات، وقائمة المراجع."
+     }
+    },
+    {
+     "icon": "📊",
+     "title": {
+      "en": "Slides → PowerPoint",
+      "ar": "العروض → PowerPoint"
+     },
+     "text": {
+      "en": "Write a progress report as an outline. It becomes slides in your template, splitting long slides automatically.",
+      "ar": "تكتب العرض كنقاط، ويتحوّل لشرائح بقالبك، والشريحة الطويلة تنقسم لحالها."
+     }
+    },
+    {
+     "icon": "📗",
+     "title": {
+      "en": "Tables → Excel & Origin",
+      "ar": "الجداول → Excel وOrigin"
+     },
+     "text": {
+      "en": "Paste data from any instrument as a table, add formulas, and build an Excel file with live formulas or an Origin project with the plots.",
+      "ar": "تلصق بيانات أي جهاز كجدول، وتضيف معادلات، وتطلّع ملف Excel بمعادلات حقيقية أو مشروع Origin بالرسومات."
+     }
+    },
+    {
+     "icon": "📚",
+     "title": {
+      "en": "Zotero citations",
+      "ar": "استشهادات Zotero"
+     },
+     "text": {
+      "en": "Cite from your Zotero library while you write. References are formatted for you (APA, IEEE and more).",
+      "ar": "تستشهد من مكتبة Zotero وأنت تكتب، والمراجع تنسّق نفسها (APA وIEEE وغيرها)."
+     }
+    },
+    {
+     "icon": "📓",
+     "title": {
+      "en": "Daily logbook",
+      "ar": "لوق يومي"
+     },
+     "text": {
+      "en": "Each day gets a logbook page: your voice notes, results, problems and next steps, all searchable.",
+      "ar": "لكل يوم صفحة: ملاحظاتك الصوتية ونتائجك ومشاكلك وخطوتك الجاية، وكلها قابلة للبحث."
+     }
+    },
+    {
+     "icon": "🏠",
+     "title": {
+      "en": "Home dashboard",
+      "ar": "لوحة البداية"
+     },
+     "text": {
+      "en": "One page with your thesis progress, today's tasks, recent experiments, data files and papers, with a button for each.",
+      "ar": "صفحة وحدة فيها تقدّم رسالتك ومهام اليوم وآخر تجاربك وملفات بياناتك وأوراقك، ولكل شي زر."
+     }
+    }
+   ]
+  },
+  {
    "id": "why",
    "layout": "text",
-   "bg": "white",
+   "bg": "grey",
    "title": {
     "en": "Why “Oxide”?",
     "ar": "ليش «Oxide»؟"
@@ -179,7 +339,7 @@
   {
    "id": "types",
    "layout": "cards",
-   "bg": "grey",
+   "bg": "white",
    "title": {
     "en": "Start with the type. Oxide files it.",
     "ar": "ابدأ بالنوع، وOxide يحطها في مكانها."
@@ -262,7 +422,7 @@
   {
    "id": "device",
    "layout": "cards",
-   "bg": "white",
+   "bg": "grey",
    "title": {
     "en": "A pocket recorder that knows the lab",
     "ar": "جهاز جيب يعرف المعمل"
@@ -347,7 +507,7 @@
   {
    "id": "labs",
    "layout": "cards",
-   "bg": "grey",
+   "bg": "white",
    "title": {
     "en": "One lab, many notebooks",
     "ar": "معمل واحد، ودفاتر كثيرة"
@@ -399,7 +559,7 @@
   {
    "id": "privacy",
    "layout": "cards",
-   "bg": "white",
+   "bg": "grey",
    "title": {
     "en": "Your notes stay yours",
     "ar": "ملاحظاتك تبقى لك"
@@ -451,7 +611,7 @@
   {
    "id": "roadmap",
    "layout": "cards",
-   "bg": "grey",
+   "bg": "white",
    "title": {
     "en": "Where Oxide is",
     "ar": "وين وصل Oxide"
