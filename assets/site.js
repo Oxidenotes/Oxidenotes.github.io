@@ -1,38 +1,48 @@
-/* Oxide site: everything is drawn from content.json, which the admin (admin/) edits.
-   index.html calls Oxide.home(), page.html calls Oxide.page(). */
+/* Oxide site: everything is drawn from content.json.
+   index.html calls Oxide.home(), page.html calls Oxide.page().
+   Add ?edit to any page URL to edit it in place (assets/editor.js). */
 (function () {
   var data = null, lang = 'en', mode = 'home';
+  var EDIT = /[?&]edit(?:=|&|$)/.test(location.search);
   try { lang = localStorage.getItem('oxide-lang') || (/^ar/.test(navigator.language) ? 'ar' : 'en'); } catch (e) {}
-  function tx(o) { return o ? (o[lang] || o.en || '') : ''; }
+  function tx(o) { return o ? (o[lang] || (EDIT ? '' : o.en) || '') : ''; }
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  var L = function (en, ar) { return lang === 'ar' ? ar : en; };
   var main = document.getElementById('top');
+
+  /* a text bound to a field of content.json; in edit mode empty optional fields still show, as placeholders */
+  function bound(tag, cls, path, obj, hint) {
+    var v = tx(obj);
+    if (!v && !EDIT) return null;
+    var e = el(tag, cls, v); e.dataset.p = path; if (hint) e.dataset.hint = hint;
+    return e;
+  }
+  function add(parent, child) { if (child) parent.append(child); return child; }
 
   function chrome() {
     document.documentElement.lang = lang; document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
     var links = document.getElementById('links'); links.innerHTML = '';
     var here = new URLSearchParams(location.search).get('p');
-    if (mode === 'page') { var h = el('a', '', lang === 'ar' ? 'الرئيسية' : 'Home'); h.href = './'; links.append(h); }
+    if (mode === 'page') { var h = el('a', '', L('Home', 'الرئيسية')); h.href = './'; links.append(h); }
     (data.pages || []).filter(function (p) { return p.nav !== false && p.slug; }).forEach(function (p) {
-      var a = el('a', p.slug === here ? 'on' : '', tx(p.title)); a.href = 'page.html?p=' + encodeURIComponent(p.slug); links.append(a);
+      var a = el('a', p.slug === here ? 'on' : '', tx(p.title) || p.slug); a.href = 'page.html?p=' + encodeURIComponent(p.slug); links.append(a);
     });
     document.getElementById('lang').textContent = lang === 'ar' ? 'English' : 'عربي';
-    var cta = document.getElementById('navcta'); cta.textContent = tx(data.hero && data.hero.button); cta.href = mode === 'home' ? '#pilot' : './#pilot';
-    document.getElementById('foot').textContent = tx(data.footer);
+    var cta = document.getElementById('navcta'); cta.textContent = tx(data.hero && data.hero.button) || L('Join the pilot', 'انضم للتجربة'); cta.href = mode === 'home' ? '#pilot' : './#pilot';
+    var foot = document.getElementById('foot'); foot.textContent = tx(data.footer); foot.dataset.p = 'footer';
     var d = document.querySelector('meta[name=description]'); if (d && data.site) d.content = tx(data.site.description);
   }
 
-
-  var L = function (en, ar) { return lang === 'ar' ? ar : en; };
   function emailBlock(p) {
     var ct = el('div', 'contact');
     ct.append(el('div', '', L('Email', 'راسلنا على')));
-    var addr = el('div', 'addr', p.email || ''); ct.append(addr);
-    var ul = el('ul'); (p.bullets || []).forEach(function (x) { if (tx(x)) ul.append(el('li', '', tx(x))); }); ct.append(ul);
+    var addr = el('div', 'addr', p.email || ''); addr.dataset.raw = 'pilot.email'; ct.append(addr);
+    var ul = el('ul'); (p.bullets || []).forEach(function (x, i) { var b = bound('span', '', 'pilot.bullets.' + i, x, L('Point', 'نقطة')); if (b) { var li = el('li'); li.append(b); ul.append(li); } }); ct.append(ul);
     return ct;
   }
   /* sign-up form: posts to the Google Apps Script web app in content.json (pilot.form_url), which appends a row to a Google Sheet */
   function signupForm(p) {
-    var f = el('form', 'contact signup'); f.noValidate = false;
+    var f = el('form', 'contact signup');
     function field(name, label, type, req, opts) {
       var w = el('label', 'fld'); w.append(el('span', '', label + (req ? ' *' : '')));
       var i;
@@ -57,8 +67,8 @@
     var msg = el('p', 'fmsg'); msg.setAttribute('role', 'status'); f.append(msg);
     f.addEventListener('submit', function (e) {
       e.preventDefault();
-      if (!f.reportValidity()) return;
-      if (hp.value) return;
+      if (EDIT) { msg.textContent = L('The form is off while editing.', 'النموذج موقّف في وضع التعديل.'); return; }
+      if (!f.reportValidity() || hp.value) return;
       sb.disabled = true; sb.textContent = L('Sending…', 'يرسل…');
       var fd = new URLSearchParams();
       ['name', 'email', 'role', 'university', 'field', 'obsidian', 'note'].forEach(function (k) { fd.append(k, f.elements[k].value.trim()); });
@@ -75,38 +85,46 @@
 
   function home() {
     main.innerHTML = '';
-    var hero = data.hero || {}, h = el('section', 'hero'), w = el('div', 'wrap');
-    if (tx(hero.pill)) { var pill = el('span', 'pill'); pill.append(el('i'), el('span', '', tx(hero.pill))); w.append(pill); }
-    var h1 = el('h1'), words = tx(hero.title).split(' ');
-    h1.append(document.createTextNode(words.slice(0, -2).join(' ') + (words.length > 2 ? ' ' : '')), el('span', 'accent', words.slice(-2).join(' ')));
-    w.append(h1, el('p', 'lead', tx(hero.text)));
-    if (tx(hero.button)) { var b = el('a', 'btn', tx(hero.button)); b.href = '#pilot'; w.append(b); }
-    var hw = el('div', 'wrap'); w.className = ''; hw.append(w);
-    var img = el('img', 'mascot'); img.src = 'assets/logo.svg'; img.alt = lang === 'ar' ? 'باندا Oxide بالبالطو ماسك قارورة معمل' : 'The Oxide panda in a lab coat holding a flask'; hw.append(img);
+    var hero = data.hero || {}, h = el('section', 'hero'), w = el('div');
+    var pill = el('span', 'pill'); pill.append(el('i')); add(pill, bound('span', '', 'hero.pill', hero.pill, L('Short tag', 'شارة قصيرة'))); if (pill.children.length > 1) w.append(pill);
+    var h1 = el('h1'), title = tx(hero.title);
+    if (EDIT) { h1.textContent = title; h1.dataset.p = 'hero.title'; }
+    else { var words = title.split(' '); h1.append(document.createTextNode(words.slice(0, -2).join(' ') + (words.length > 2 ? ' ' : '')), el('span', 'accent', words.slice(-2).join(' '))); }
+    w.append(h1); add(w, bound('p', 'lead', 'hero.text', hero.text));
+    var b = bound('a', 'btn', 'hero.button', hero.button); if (b) { b.href = '#pilot'; w.append(b); }
+    var hw = el('div', 'wrap'); hw.append(w);
+    var img = el('img', 'mascot'); img.src = 'assets/logo.svg'; img.alt = L('The Oxide panda in a lab coat holding a flask', 'باندا Oxide بالبالطو ماسك قارورة معمل'); hw.append(img);
     h.append(hw); main.append(h);
 
-    if (data.ribbon && data.ribbon.length) { var r = el('div', 'ribbon'), rw = el('div', 'wrap'); data.ribbon.forEach(function (x) { if (tx(x)) rw.append(el('span', '', tx(x))); }); r.append(rw); main.append(r); }
+    if ((data.ribbon && data.ribbon.length) || EDIT) {
+      var r = el('div', 'ribbon'), rw = el('div', 'wrap'); r.dataset.block = 'ribbon';
+      (data.ribbon || []).forEach(function (x, i) { var s = bound('span', 'rib', 'ribbon.' + i, x, L('Phrase', 'عبارة')); if (s) { s.dataset.i = i; rw.append(s); } });
+      r.append(rw); main.append(r);
+    }
 
-    (data.sections || []).forEach(function (s) {
+    (data.sections || []).forEach(function (s, si) {
+      var base = 'sections.' + si;
       var sec = el('section', s.bg === 'grey' ? 'grey' : ''), sw = el('div', 'wrap');
       if (s.id) sec.id = s.id;
-      var h2 = el('h2', '', tx(s.title)); if (tx(s.badge)) h2.append(el('span', 'badge', tx(s.badge)));
+      sec.dataset.si = si;
+      var h2 = el('h2'); add(h2, bound('span', '', base + '.title', s.title, L('Section title', 'عنوان القسم')));
+      add(h2, bound('span', 'badge', base + '.badge', s.badge, L('Badge', 'شارة')));
       sw.append(h2);
-      if (tx(s.lead)) sw.append(el('p', 'lead', tx(s.lead)));
+      add(sw, bound('p', 'lead', base + '.lead', s.lead, L('A line under the title (optional)', 'سطر تحت العنوان (اختياري)')));
       var items = s.items || [];
-      if (s.layout === 'steps' && items.length) {
+      if (s.layout === 'steps') {
         var ol = el('ol', 'steps');
-        items.forEach(function (it) { var li = el('li'); li.append(el('h3', '', tx(it.title)), el('p', '', tx(it.text))); ol.append(li); });
+        items.forEach(function (it, ii) { var li = el('li'); li.dataset.ii = ii; add(li, bound('h3', '', base + '.items.' + ii + '.title', it.title, L('Step', 'خطوة'))); add(li, bound('p', '', base + '.items.' + ii + '.text', it.text, L('Text', 'نص'))); ol.append(li); });
         sw.append(ol);
-      } else if (s.layout !== 'text' && items.length) {
+      } else if (s.layout !== 'text') {
         var g = el('div', 'cards');
-        items.forEach(function (it) {
-          var c = el('div', 'card');
-          if (it.icon) c.append(el('span', 'ic', it.icon));
-          c.append(el('h3', '', tx(it.title)));
-          if (tx(it.tag)) c.append(el('span', 'tag', tx(it.tag)));
-          c.append(el('p', '', tx(it.text)));
-          if (it.note) c.append(el('span', 'note', it.note));
+        items.forEach(function (it, ii) {
+          var ib = base + '.items.' + ii, c = el('div', 'card'); c.dataset.ii = ii;
+          if (it.icon || EDIT) { var ic = el('span', 'ic', it.icon || '＋'); ic.dataset.icon = ib + '.icon'; if (!it.icon) ic.classList.add('ph-ic'); c.append(ic); }
+          add(c, bound('h3', '', ib + '.title', it.title, L('Title', 'العنوان')));
+          add(c, bound('span', 'tag', ib + '.tag', it.tag, L('Tag', 'وسم')));
+          add(c, bound('p', '', ib + '.text', it.text, L('Text', 'النص')));
+          if (it.note || EDIT) { var n = el('span', 'note', it.note || ''); n.dataset.raw = ib + '.note'; n.dataset.hint = 'note'; c.append(n); }
           g.append(c);
         });
         sw.append(g);
@@ -114,37 +132,48 @@
       sec.append(sw); main.append(sec);
     });
 
-    var p = data.pilot || {}, ps = el('section'); ps.id = 'pilot';
+    var p = data.pilot || {}, ps = el('section'); ps.id = 'pilot'; ps.dataset.block = 'pilot';
     var pw = el('div', 'wrap'), box = el('div', 'pilot'), left = el('div');
-    left.append(el('h2', '', tx(p.title)), el('p', '', tx(p.text)));
+    add(left, bound('h2', '', 'pilot.title', p.title)); add(left, bound('p', '', 'pilot.text', p.text));
     box.append(left, p.form_url ? signupForm(p) : emailBlock(p)); pw.append(box); ps.append(pw); main.append(ps);
-    document.title = (data.site && data.site.name ? data.site.name.charAt(0) + data.site.name.slice(1).toLowerCase() : 'Oxide') + ' — ' + tx(hero.title);
+    document.title = 'Oxide — ' + tx(hero.title);
   }
 
   function page() {
     main.innerHTML = '';
     var slug = new URLSearchParams(location.search).get('p');
-    var pg = (data.pages || []).find(function (x) { return x.slug === slug; });
+    var idx = (data.pages || []).findIndex(function (x) { return x.slug === slug; }), pg = data.pages[idx];
     var sec = el('section', 'page'), w = el('div', 'wrap');
-    if (!pg) { w.append(el('h1', '', lang === 'ar' ? 'الصفحة غير موجودة' : 'Page not found')); var a = el('a', '', lang === 'ar' ? 'رجوع للرئيسية' : 'Back to home'); a.href = './'; w.append(a); }
+    if (!pg) { w.append(el('h1', '', L('Page not found', 'الصفحة غير موجودة'))); var a = el('a', '', L('Back to home', 'رجوع للرئيسية')); a.href = './'; w.append(a); }
     else {
-      w.append(el('h1', '', tx(pg.title)));
+      sec.dataset.page = idx;
+      add(w, bound('h1', '', 'pages.' + idx + '.title', pg.title, L('Page title', 'عنوان الصفحة')));
       var body = el('div', 'prose'), md = tx(pg.body);
-      body.innerHTML = window.DOMPurify ? DOMPurify.sanitize(marked.parse(md)) : '';
-      if (!window.marked) body.textContent = md;
+      if (window.marked && window.DOMPurify) body.innerHTML = DOMPurify.sanitize(marked.parse(md)); else body.textContent = md;
+      body.dataset.md = 'pages.' + idx + '.body';
       w.append(body);
-      document.title = tx(pg.title) + ' — Oxide';
+      document.title = (tx(pg.title) || slug) + ' — Oxide';
     }
     sec.append(w); main.append(sec);
   }
 
-  function render() { chrome(); if (mode === 'page') page(); else home(); }
+  function render() { var y = scrollY; chrome(); if (mode === 'page') page(); else home(); if (EDIT && window.OxideEditor) OxideEditor.decorate(); if (EDIT) scrollTo(0, y); }
   document.getElementById('yr').textContent = new Date().getFullYear();
   document.getElementById('lang').onclick = function () { lang = lang === 'ar' ? 'en' : 'ar'; try { localStorage.setItem('oxide-lang', lang); } catch (e) {} if (data) render(); };
-  function load(m) {
+
+  function start(m) {
     mode = m;
-    fetch('content.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (d) { data = d; render(); })
-      .catch(function () { main.innerHTML = '<div class="wrap loading">Could not load the page content. Please refresh.</div>'; });
+    var editor = EDIT ? new Promise(function (res) { var s = document.createElement('script'); s.src = 'assets/editor.js'; s.onload = res; s.onerror = res; document.head.append(s); }) : Promise.resolve();
+    var content = fetch('content.json', { cache: 'no-cache' }).then(function (r) { return r.json(); });
+    Promise.all([content, editor]).then(function (x) {
+      data = x[0];
+      if (EDIT && window.OxideEditor) return OxideEditor.init(api).then(render); render();
+    }).catch(function () { main.innerHTML = '<div class="wrap loading">Could not load the page content. Please refresh.</div>'; });
   }
-  window.Oxide = { home: function () { load('home'); }, page: function () { load('page'); } };
+  var api = {
+    get data() { return data; }, set data(d) { data = d; },
+    get lang() { return lang; }, get mode() { return mode; },
+    render: render
+  };
+  window.Oxide = { home: function () { start('home'); }, page: function () { start('page'); } };
 })();
