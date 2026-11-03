@@ -1,0 +1,559 @@
+{
+ "site": {
+  "name": "OXIDE",
+  "description": {
+   "en": "Oxide turns what researchers say at the bench into structured entries in their Obsidian logbook.",
+   "ar": "Oxide يحوّل كلام الباحث عند الطاولة إلى سجل منظم في دفتر Obsidian."
+  }
+ },
+ "hero": {
+  "pill": {
+   "en": "Working today in Obsidian + Telegram",
+   "ar": "شغّال اليوم في Obsidian وتيليجرام"
+  },
+  "title": {
+   "en": "Talk to your lab notebook.",
+   "ar": "كلّم دفتر معملك."
+  },
+  "text": {
+   "en": "Press, speak, keep working. Oxide turns what you say at the bench into a neat entry in your logbook: sample, step, temperature, time, defects, even the lab's humidity.",
+   "ar": "اضغط وتكلّم وكمّل شغلك. Oxide يحوّل كلامك عند الطاولة إلى سجل مرتب في دفترك: العينة والخطوة والحرارة والمدة والعيوب، وحتى رطوبة المعمل."
+  },
+  "button": {
+   "en": "Join the pilot",
+   "ar": "انضم للتجربة"
+  }
+ },
+ "ribbon": [
+  {
+   "en": "Arabic + English in one sentence",
+   "ar": "عربي وإنجليزي في جملة وحدة"
+  },
+  {
+   "en": "Voice stays on your laptop",
+   "ar": "صوتك يبقى على لابتوبك"
+  },
+  {
+   "en": "Plain Obsidian notes",
+   "ar": "ملاحظات Obsidian عادية"
+  },
+  {
+   "en": "Replies on Telegram",
+   "ar": "يرد عليك في تيليجرام"
+  }
+ ],
+ "sections": [
+  {
+   "id": "problem",
+   "layout": "cards",
+   "bg": "white",
+   "title": {
+    "en": "The note you meant to write later…",
+    "ar": "الملاحظة اللي قلت بكتبها بعدين…"
+   },
+   "lead": {
+    "en": "",
+    "ar": ""
+   },
+   "badge": {
+    "en": "",
+    "ar": ""
+   },
+   "items": [
+    {
+     "icon": "🧤",
+     "title": {
+      "en": "Gloves on",
+      "ar": "يدك في القفاز"
+     },
+     "text": {
+      "en": "Your hands are in the glovebox or on a pipette. Writing has to wait.",
+      "ar": "يدك في الـ glovebox أو على الـ pipette. الكتابة تنتظر."
+     }
+    },
+    {
+     "icon": "⏱️",
+     "title": {
+      "en": "Timer running",
+      "ar": "المؤقت شغّال"
+     },
+     "text": {
+      "en": "The film is on the hot plate. You'll write it after, and the exact time slips away.",
+      "ar": "الفيلم على الـ hot plate. بتكتبها بعدين، والوقت بالضبط يطير."
+     }
+    },
+    {
+     "icon": "🌙",
+     "title": {
+      "en": "By evening, it's gone",
+      "ar": "وبالليل، راحت"
+     },
+     "text": {
+      "en": "150 °C or 160 °C? 13 s or 30 s? The details that explain your results go first.",
+      "ar": "١٥٠ ولا ١٦٠ درجة؟ ١٣ ثانية ولا ٣٠؟ التفاصيل اللي تفسّر نتايجك هي أول شي تنساه."
+     }
+    }
+   ]
+  },
+  {
+   "id": "how",
+   "layout": "steps",
+   "bg": "grey",
+   "title": {
+    "en": "From voice to logbook in four steps",
+    "ar": "من صوتك لدفترك في أربع خطوات"
+   },
+   "lead": {
+    "en": "",
+    "ar": ""
+   },
+   "badge": {
+    "en": "",
+    "ar": ""
+   },
+   "items": [
+    {
+     "icon": "",
+     "title": {
+      "en": "Speak",
+      "ar": "تكلّم"
+     },
+     "text": {
+      "en": "Press the device button or send a Telegram voice note. Arabic, English, or both.",
+      "ar": "اضغط زر الجهاز أو أرسل رسالة صوتية في تيليجرام. عربي أو إنجليزي، أو الاثنين."
+     }
+    },
+    {
+     "icon": "",
+     "title": {
+      "en": "Transcribed locally",
+      "ar": "يتحوّل لنص عندك"
+     },
+     "text": {
+      "en": "Whisper runs on your own laptop, and your lab glossary fixes the words it mishears.",
+      "ar": "Whisper يشتغل على لابتوبك، وقاموس معملك يصلّح الكلمات اللي يسمعها غلط."
+     }
+    },
+    {
+     "icon": "",
+     "title": {
+      "en": "Sorted",
+      "ar": "يترتّب"
+     },
+     "text": {
+      "en": "Sample, step, values with units, defects, colour. Anything missing gets flagged.",
+      "ar": "العينة والخطوة والقيم بوحداتها والعيوب واللون. وأي شي ناقص ينبّهك عليه."
+     }
+    },
+    {
+     "icon": "",
+     "title": {
+      "en": "Logged",
+      "ar": "يتسجّل"
+     },
+     "text": {
+      "en": "It lands in that day's note with the original audio, and the bot replies so you can fix it on the spot.",
+      "ar": "ينكتب في لوق يومه مع التسجيل الأصلي، والبوت يرد عليك عشان تصحّح على طول."
+     }
+    }
+   ]
+  },
+  {
+   "id": "why",
+   "layout": "text",
+   "bg": "white",
+   "title": {
+    "en": "Why “Oxide”?",
+    "ar": "ليش «Oxide»؟"
+   },
+   "lead": {
+    "en": "Oxides are some of the most stable materials we make. Oxide gives your notes the same stability: everything recorded, nothing lost.",
+    "ar": "الأكاسيد من أكثر المواد استقراراً. وOxide يعطي ملاحظاتك نفس الاستقرار: كل شي يتسجّل، وما يضيع شي."
+   },
+   "badge": {
+    "en": "",
+    "ar": ""
+   },
+   "items": []
+  },
+  {
+   "id": "types",
+   "layout": "cards",
+   "bg": "grey",
+   "title": {
+    "en": "Start with the type. Oxide files it.",
+    "ar": "ابدأ بالنوع، وOxide يحطها في مكانها."
+   },
+   "lead": {
+    "en": "",
+    "ar": ""
+   },
+   "badge": {
+    "en": "",
+    "ar": ""
+   },
+   "items": [
+    {
+     "icon": "🧪",
+     "title": {
+      "en": "Lab note",
+      "ar": "ملاحظة معمل"
+     },
+     "text": {
+      "en": "Parameters and observations, sorted into fields.",
+      "ar": "القيم والملاحظات، مرتبة في حقول."
+     },
+     "tag": {
+      "en": "(just talk)",
+      "ar": "(تكلّم على طول)"
+     },
+     "note": "01 Logbook / today"
+    },
+    {
+     "icon": "📄",
+     "title": {
+      "en": "Paper",
+      "ar": "ورقة"
+     },
+     "text": {
+      "en": "Summary, key points and questions, added to that paper's note.",
+      "ar": "ملخص ونقاط مهمة وأسئلة، تنضاف لملاحظة الورقة."
+     },
+     "tag": {
+      "en": "“Paper Zhang 2023…”",
+      "ar": "«ورقة Zhang 2023…»"
+     },
+     "note": "02 Literature"
+    },
+    {
+     "icon": "👥",
+     "title": {
+      "en": "Meeting",
+      "ar": "اجتماع"
+     },
+     "text": {
+      "en": "Decisions, plus tasks with due dates in your task list.",
+      "ar": "القرارات، والمهام بتواريخها في قائمة مهامك."
+     },
+     "tag": {
+      "en": "“Meeting with my supervisor…”",
+      "ar": "«اجتماع مع المشرف…»"
+     },
+     "note": "Logbook / Meetings"
+    },
+    {
+     "icon": "💡",
+     "title": {
+      "en": "Idea",
+      "ar": "فكرة"
+     },
+     "text": {
+      "en": "A titled idea with a next step, before it flies away.",
+      "ar": "فكرة لها عنوان وخطوة جاية، قبل ما تطير."
+     },
+     "tag": {
+      "en": "“Idea: …”",
+      "ar": "«فكرة: …»"
+     },
+     "note": "03 Ideas"
+    }
+   ]
+  },
+  {
+   "id": "device",
+   "layout": "cards",
+   "bg": "white",
+   "title": {
+    "en": "A pocket recorder that knows the lab",
+    "ar": "جهاز جيب يعرف المعمل"
+   },
+   "lead": {
+    "en": "A palm-sized e-paper recorder that clips to your lab coat.",
+    "ar": "جهاز بحجم الكف تعلّقه على البالطو."
+   },
+   "badge": {
+    "en": "In development",
+    "ar": "قيد التطوير"
+   },
+   "items": [
+    {
+     "icon": "🎙️",
+     "title": {
+      "en": "Mic & speaker",
+      "ar": "مايك وسماعة"
+     },
+     "text": {
+      "en": "Press to talk; it confirms what it saved.",
+      "ar": "اضغط وتكلّم، ويأكد لك وش حفظ."
+     }
+    },
+    {
+     "icon": "📟",
+     "title": {
+      "en": "E-ink screen",
+      "ar": "شاشة حبر إلكتروني"
+     },
+     "text": {
+      "en": "Readable under any lab light.",
+      "ar": "تنقرا تحت أي إضاءة."
+     }
+    },
+    {
+     "icon": "🕒",
+     "title": {
+      "en": "Real-time clock",
+      "ar": "ساعة دقيقة"
+     },
+     "text": {
+      "en": "Every note timestamped, offline too.",
+      "ar": "كل ملاحظة بوقتها، حتى بدون نت."
+     }
+    },
+    {
+     "icon": "🌡️",
+     "title": {
+      "en": "Temp & humidity",
+      "ar": "حرارة ورطوبة"
+     },
+     "text": {
+      "en": "Lab conditions saved with each note.",
+      "ar": "ظروف المعمل مع كل ملاحظة."
+     }
+    },
+    {
+     "icon": "💾",
+     "title": {
+      "en": "microSD",
+      "ar": "بطاقة ذاكرة"
+     },
+     "text": {
+      "en": "Records offline, syncs later.",
+      "ar": "يسجّل بدون نت ويرفع بعدين."
+     }
+    },
+    {
+     "icon": "🔋",
+     "title": {
+      "en": "Clip-on battery",
+      "ar": "بطارية"
+     },
+     "text": {
+      "en": "Clips to your lab coat for the whole day.",
+      "ar": "تعلّقه على البالطو طول اليوم."
+     }
+    }
+   ]
+  },
+  {
+   "id": "labs",
+   "layout": "cards",
+   "bg": "grey",
+   "title": {
+    "en": "One lab, many notebooks",
+    "ar": "معمل واحد، ودفاتر كثيرة"
+   },
+   "lead": {
+    "en": "Each student keeps their own notebook and shares the lab parts. Supervisors see progress without chasing anyone.",
+    "ar": "كل طالب يحتفظ بدفتره ويشارك أجزاء المعمل. والمشرف يشوف التقدم بدون ما يلاحق أحد."
+   },
+   "badge": {
+    "en": "Next",
+    "ar": "قادم"
+   },
+   "items": [
+    {
+     "icon": "🎓",
+     "title": {
+      "en": "Supervisor",
+      "ar": "المشرف"
+     },
+     "text": {
+      "en": "Sees every student's log, meetings and samples; comments and assigns tasks.",
+      "ar": "يشوف لوقات الطلاب واجتماعاتهم وعيناتهم، ويعلّق ويعطي مهام."
+     }
+    },
+    {
+     "icon": "🧰",
+     "title": {
+      "en": "Lab manager",
+      "ar": "مسؤول المعمل"
+     },
+     "text": {
+      "en": "Keeps protocols, the shared glossary and lab-wide sample IDs.",
+      "ar": "يدير البروتوكولات والقاموس المشترك وأرقام العينات."
+     }
+    },
+    {
+     "icon": "🔬",
+     "title": {
+      "en": "Student",
+      "ar": "الطالب"
+     },
+     "text": {
+      "en": "Owns their notebook. Shares lab notes, keeps ideas private.",
+      "ar": "يملك دفتره. يشارك ملاحظات المعمل، ويخلي أفكاره خاصة."
+     }
+    }
+   ]
+  },
+  {
+   "id": "privacy",
+   "layout": "cards",
+   "bg": "white",
+   "title": {
+    "en": "Your notes stay yours",
+    "ar": "ملاحظاتك تبقى لك"
+   },
+   "lead": {
+    "en": "",
+    "ar": ""
+   },
+   "badge": {
+    "en": "",
+    "ar": ""
+   },
+   "items": [
+    {
+     "icon": "🔒",
+     "title": {
+      "en": "Voice stays local",
+      "ar": "الصوت يبقى عندك"
+     },
+     "text": {
+      "en": "Speech-to-text runs on your laptop. Audio is not uploaded.",
+      "ar": "التحويل لنص على لابتوبك. الصوت ما ينرفع."
+     }
+    },
+    {
+     "icon": "📝",
+     "title": {
+      "en": "Plain Markdown",
+      "ar": "ملفات عادية"
+     },
+     "text": {
+      "en": "Everything is an Obsidian note you can open, back up or take with you.",
+      "ar": "كل شي ملاحظة Obsidian تفتحها وتاخذ منها نسخة وتطلع فيها متى ما بغيت."
+     }
+    },
+    {
+     "icon": "🧠",
+     "title": {
+      "en": "AI is optional",
+      "ar": "الذكاء اختياري"
+     },
+     "text": {
+      "en": "Summaries use your own Claude key and send text only.",
+      "ar": "الملخصات بمفتاح Claude حقك، وترسل نص بس."
+     }
+    }
+   ]
+  },
+  {
+   "id": "roadmap",
+   "layout": "cards",
+   "bg": "grey",
+   "title": {
+    "en": "Where Oxide is",
+    "ar": "وين وصل Oxide"
+   },
+   "lead": {
+    "en": "",
+    "ar": ""
+   },
+   "badge": {
+    "en": "",
+    "ar": ""
+   },
+   "items": [
+    {
+     "icon": "✅",
+     "title": {
+      "en": "Now",
+      "ar": "الحين"
+     },
+     "text": {
+      "en": "Obsidian plugin, Telegram bot, local transcription, lab glossary.",
+      "ar": "إضافة Obsidian وبوت تيليجرام والتحويل المحلي والقاموس."
+     },
+     "tag": {
+      "en": "Working",
+      "ar": "شغّال"
+     }
+    },
+    {
+     "icon": "🛠️",
+     "title": {
+      "en": "Next",
+      "ar": "بعدها"
+     },
+     "text": {
+      "en": "The pocket device.",
+      "ar": "جهاز الجيب."
+     },
+     "tag": {
+      "en": "In development",
+      "ar": "قيد التطوير"
+     }
+    },
+    {
+     "icon": "🏫",
+     "title": {
+      "en": "Later",
+      "ar": "لاحقاً"
+     },
+     "text": {
+      "en": "Lab server with roles and a supervisor dashboard.",
+      "ar": "سيرفر للمعمل بالأدوار ولوحة للمشرف."
+     },
+     "tag": {
+      "en": "Planned",
+      "ar": "مخطط"
+     }
+    }
+   ]
+  }
+ ],
+ "pilot": {
+  "title": {
+   "en": "Try Oxide in your lab",
+   "ar": "جرّب Oxide في معملك"
+  },
+  "text": {
+   "en": "We're looking for a few research groups in materials science, chemistry and engineering to use Oxide for a month and tell us what breaks.",
+   "ar": "ندوّر على مجموعات بحثية قليلة في علوم المواد والكيمياء والهندسة تستخدم Oxide شهر، وتقول لنا وش يخرب."
+  },
+  "email": "anasqalasi@gmail.com",
+  "bullets": [
+   {
+    "en": "Your name and role",
+    "ar": "اسمك ودورك"
+   },
+   {
+    "en": "University and field",
+    "ar": "الجامعة والمجال"
+   },
+   {
+    "en": "Does your group use Obsidian?",
+    "ar": "هل مجموعتك تستخدم Obsidian؟"
+   }
+  ]
+ },
+ "footer": {
+  "en": "Built by a materials-science researcher, for the people at the bench.",
+  "ar": "بناه باحث في علوم المواد، للناس اللي عند الطاولة."
+ },
+ "pages": [
+  {
+   "slug": "about",
+   "nav": true,
+   "title": {
+    "en": "About",
+    "ar": "عن Oxide"
+   },
+   "body": {
+    "en": "## Why we built Oxide\n\nOxide started in a materials-science lab, where notes kept getting lost between the glovebox and the hot plate.\n\nIt is a voice lab notebook: you speak, and the note lands in your Obsidian logbook with the sample, step, values and units.\n\n- Works in Arabic, English, or both\n- Speech-to-text runs on your own laptop\n- Your notes stay plain Markdown files",
+    "ar": "## ليش بنينا Oxide\n\nOxide بدأ في معمل علوم مواد، كانت الملاحظات فيه تضيع بين الـ glovebox والـ hot plate.\n\nهو دفتر معمل صوتي: تتكلم، والملاحظة تنكتب في دفترك على Obsidian بالعينة والخطوة والقيم ووحداتها.\n\n- يشتغل بالعربي والإنجليزي، أو الاثنين\n- التحويل لنص على لابتوبك\n- ملاحظاتك تبقى ملفات Markdown عادية"
+   }
+  }
+ ]
+}
