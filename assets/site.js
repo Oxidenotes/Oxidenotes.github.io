@@ -21,6 +21,58 @@
     var d = document.querySelector('meta[name=description]'); if (d && data.site) d.content = tx(data.site.description);
   }
 
+
+  var L = function (en, ar) { return lang === 'ar' ? ar : en; };
+  function emailBlock(p) {
+    var ct = el('div', 'contact');
+    ct.append(el('div', '', L('Email', 'راسلنا على')));
+    var addr = el('div', 'addr', p.email || ''); ct.append(addr);
+    var ul = el('ul'); (p.bullets || []).forEach(function (x) { if (tx(x)) ul.append(el('li', '', tx(x))); }); ct.append(ul);
+    return ct;
+  }
+  /* sign-up form: posts to the Google Apps Script web app in content.json (pilot.form_url), which appends a row to a Google Sheet */
+  function signupForm(p) {
+    var f = el('form', 'contact signup'); f.noValidate = false;
+    function field(name, label, type, req, opts) {
+      var w = el('label', 'fld'); w.append(el('span', '', label + (req ? ' *' : '')));
+      var i;
+      if (opts) { i = el('select'); opts.forEach(function (o) { var op = el('option', '', o[1]); op.value = o[0]; i.append(op); }); }
+      else if (type === 'textarea') { i = el('textarea'); i.rows = 3; }
+      else { i = el('input'); i.type = type || 'text'; }
+      i.name = name; i.id = 'f-' + name; if (req) i.required = true; w.append(i); f.append(w); return i;
+    }
+    f.append(el('h3', '', L('Join the pilot', 'سجّل في التجربة')));
+    field('name', L('Name', 'الاسم'), 'text', true).autocomplete = 'name';
+    field('email', L('Email', 'الإيميل'), 'email', true).autocomplete = 'email';
+    field('role', L('Role', 'الدور'), null, true, [['', L('Choose…', 'اختر…')], ['student', L('Student', 'طالب')], ['supervisor', L('Supervisor / PI', 'مشرف')], ['lab_manager', L('Lab manager', 'مسؤول معمل')], ['other', L('Other', 'غير ذلك')]]);
+    field('university', L('University / institute', 'الجامعة أو المعهد'), 'text', true).autocomplete = 'organization';
+    field('field', L('Research field', 'مجال البحث'), 'text', false);
+    field('obsidian', L('Does your group use Obsidian?', 'هل مجموعتك تستخدم Obsidian؟'), null, false, [['', '—'], ['yes', L('Yes', 'نعم')], ['no', L('No', 'لا')], ['some', L('Some of us', 'بعضنا')]]);
+    field('note', L('Anything to add', 'شي تحب تضيفه'), 'textarea', false);
+    var hp = el('input'); hp.name = 'website'; hp.tabIndex = -1; hp.autocomplete = 'off'; hp.className = 'hp'; hp.setAttribute('aria-hidden', 'true'); f.append(hp);
+    var cw = el('label', 'consent'), cb = el('input'); cb.type = 'checkbox'; cb.required = true; cb.name = 'consent';
+    cw.append(cb, el('span', '', L('I agree that Oxide keeps these details to contact me about the pilot. I can ask for them to be deleted at any time.', 'أوافق إن Oxide يحفظ هذي البيانات عشان يتواصل معي بخصوص التجربة، وأقدر أطلب حذفها بأي وقت.')));
+    f.append(cw);
+    var sb = el('button', 'btn', L('Send', 'إرسال')); sb.type = 'submit'; f.append(sb);
+    var msg = el('p', 'fmsg'); msg.setAttribute('role', 'status'); f.append(msg);
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!f.reportValidity()) return;
+      if (hp.value) return;
+      sb.disabled = true; sb.textContent = L('Sending…', 'يرسل…');
+      var fd = new URLSearchParams();
+      ['name', 'email', 'role', 'university', 'field', 'obsidian', 'note'].forEach(function (k) { fd.append(k, f.elements[k].value.trim()); });
+      fd.append('lang', lang); fd.append('page', location.href);
+      fetch(p.form_url, { method: 'POST', mode: 'no-cors', body: fd }).then(function () {
+        f.innerHTML = ''; f.append(el('h3', '', L('Thank you! 🎉', 'شكراً لك! 🎉')), el('p', 'fmsg ok', L('You are on the list. We will email you when the pilot starts.', 'انضفت للقائمة، وبنراسلك أول ما تبدأ التجربة.')));
+      }).catch(function () {
+        sb.disabled = false; sb.textContent = L('Send', 'إرسال');
+        msg.className = 'fmsg err'; msg.textContent = L('Could not send. Check your connection and try again' + (p.email ? ', or email ' + p.email : '') + '.', 'ما انرسل. تأكد من النت وجرّب مرة ثانية' + (p.email ? '، أو راسلنا على ' + p.email : '') + '.');
+      });
+    });
+    return f;
+  }
+
   function home() {
     main.innerHTML = '';
     var hero = data.hero || {}, h = el('section', 'hero'), w = el('div', 'wrap');
@@ -63,17 +115,7 @@
     var p = data.pilot || {}, ps = el('section'); ps.id = 'pilot';
     var pw = el('div', 'wrap'), box = el('div', 'pilot'), left = el('div');
     left.append(el('h2', '', tx(p.title)), el('p', '', tx(p.text)));
-    var ct = el('div', 'contact');
-    ct.append(el('div', '', lang === 'ar' ? 'راسلنا على' : 'Email'));
-    var addr = el('div', 'addr', p.email || ''); ct.append(addr);
-    var ul = el('ul'); (p.bullets || []).forEach(function (x) { if (tx(x)) ul.append(el('li', '', tx(x))); }); ct.append(ul);
-    var cp = el('button', 'btn', lang === 'ar' ? 'انسخ العنوان' : 'Copy address'); cp.type = 'button';
-    cp.onclick = function () {
-      var done = function () { cp.textContent = lang === 'ar' ? 'انتسخ ✓' : 'Copied ✓'; setTimeout(function () { cp.textContent = lang === 'ar' ? 'انسخ العنوان' : 'Copy address'; }, 1600); };
-      var sel = function () { var rg = document.createRange(); rg.selectNodeContents(addr); var s = getSelection(); s.removeAllRanges(); s.addRange(rg); };
-      if (navigator.clipboard) navigator.clipboard.writeText(addr.textContent).then(done, sel); else sel();
-    };
-    ct.append(cp); box.append(left, ct); pw.append(box); ps.append(pw); main.append(ps);
+    box.append(left, p.form_url ? signupForm(p) : emailBlock(p)); pw.append(box); ps.append(pw); main.append(ps);
     document.title = (data.site && data.site.name ? data.site.name.charAt(0) + data.site.name.slice(1).toLowerCase() : 'Oxide') + ' — ' + tx(hero.title);
   }
 

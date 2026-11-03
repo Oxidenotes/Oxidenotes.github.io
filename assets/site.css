@@ -63,6 +63,15 @@ header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdro
 .contact .addr{font-family:var(--mono);font-size:17px;word-break:break-all;user-select:all;direction:ltr}
 .contact ul{margin:12px 0 16px;padding-inline-start:18px;color:var(--ink-2);font-size:15px}
 .contact .btn{background:var(--ink)}
+.signup h3{margin-bottom:6px}
+.fld{display:block;margin-top:12px;font-size:14px;font-weight:600;color:var(--ink-2)}
+.fld span{display:block;margin-bottom:5px}
+.fld input,.fld select,.fld textarea{width:100%;padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;font:inherit;font-size:15px;color:var(--ink);background:#fff;font-weight:400}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:2px solid var(--blue);outline-offset:-1px;border-color:transparent}
+.consent{display:flex;gap:10px;align-items:flex-start;margin:14px 0;font-size:13.5px;color:var(--ink-2);line-height:1.6}
+.consent input{margin-top:4px;width:18px;height:18px;flex:none;accent-color:var(--blue)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.fmsg{margin-top:10px;font-size:14px}.fmsg.ok{color:#0B7D71}.fmsg.err{color:#B4232A}
 @media (max-width:860px){.pilot{grid-template-columns:1fr}}
 
 /* plain pages */

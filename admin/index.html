@@ -223,8 +223,11 @@
     contact: function () {
       var p = data.pilot = data.pilot || { bullets: [] }; p.bullets = p.bullets || [];
       var c = card('قسم التواصل (انضم للتجربة)');
-      c.append(bi(p, 'title', 'العنوان'), bi(p, 'text', 'النص', true), plain(p, 'email', 'الإيميل الظاهر', 'ltr'));
-      c = card('النقاط اللي يكتبها المرسل', bt('+ إضافة نقطة', '', function () { p.bullets.push({ en: '', ar: '' }); mark(); draw(); }));
+      c.append(bi(p, 'title', 'العنوان'), bi(p, 'text', 'النص', true), plain(p, 'email', 'الإيميل (يظهر لو النموذج ما اشتغل)', 'ltr'),
+        plain(p, 'form_url', 'رابط استقبال نموذج التسجيل (Google Apps Script). اتركه فاضي عشان يظهر الإيميل بدل النموذج', 'ltr', 'https://script.google.com/macros/s/…/exec'),
+        plain(p, 'sheet_url', 'رابط جدول المسجّلين (لك أنت بس، ما يظهر في الموقع)', 'ltr', 'https://docs.google.com/spreadsheets/…'));
+      if (p.sheet_url) { var sl = el('a', 'btn ghost sm', '📋 افتح جدول المسجّلين ↗'); sl.href = p.sheet_url; sl.target = '_blank'; sl.style.marginTop = '10px'; c.append(sl); }
+      c = card('النقاط تحت الإيميل (لما ما يكون فيه نموذج)', bt('+ إضافة نقطة', '', function () { p.bullets.push({ en: '', ar: '' }); mark(); draw(); }));
       list(c, p.bullets, 'نقطة', function (it, x) { it.append(bi({ v: x }, 'v', 'النص')); });
       c = card('آخر الصفحة'); c.append(bi(data, 'footer', 'السطر الأخير'));
     },
