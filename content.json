@@ -609,7 +609,7 @@
    },
    "body": {
     "en": "## Why we built Oxide\n\nOxide started in a materials-science lab, where notes kept getting lost between the glovebox and the hot plate.\n\nIt is a voice lab notebook: you speak, and the note lands in your Obsidian logbook with the sample, step, values and units.\n\n- Works in Arabic, English, or both\n- Speech-to-text runs on your own laptop\n- Your notes stay plain Markdown files",
-    "ar": "## ليش بنينا Oxide\n\nOxide بدأ في معمل علوم مواد، كانت الملاحظات فيه تضيع بين الـ glovebox والـ hot plate.\n\nهو دفتر معمل صوتي: تتكلم، والملاحظة تنكتب في دفترك على Obsidian بالعينة والخطوة والقيم ووحداتها.\n\n- يشتغل بالعربي والإنجليزي، أو الاثنين\n- التحويل لنص على لابتوبك\n- ملاحظاتك تبقى ملفات Markdown عادية"
+    "ar": "## ليش بنينا Oxide\n\nOxide بدأ في معمل علوم المواد، كانت الملاحظات فيه تضيع بين الـ glovebox والـ hot plate لأننا ما نقدر نكتب ونشتغل بنفس الوقت.\n\nOxide هو دفتر معمل صوتي: تتكلم، والملاحظة تنكتب في دفترك على Obsidian بالعينة والخطوة والقيم ووحداتها.\n\n- يشتغل بالعربي والإنجليزي، أو الاثنين\n- التحويل لنص على جهازك\n- ملاحظاتك تبقى ملفات Markdown عادية"
    }
   }
  ]
