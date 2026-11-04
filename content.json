@@ -13,11 +13,11 @@
   },
   "title": {
    "en": "Talk to your lab notebook.",
-   "ar": "كلّم دفتر معملك."
+   "ar": "كلّم دفتر ملاحظاتك."
   },
   "text": {
    "en": "Press, speak, keep working. Oxide turns what you say at the bench into a neat entry in your logbook: sample, step, temperature, time, defects, even the lab's humidity.",
-   "ar": "اضغط وتكلّم وكمّل شغلك. Oxide يحوّل كلامك عند الطاولة إلى سجل مرتب في دفترك: العينة والخطوة والحرارة والمدة والعيوب، وحتى رطوبة المعمل."
+   "ar": "تكلّم وكمّل شغلك وOxide يحوّل كلامك إلى ملاحظات في دفترك: العينة والخطوة والحرارة والمدة والعيوب، وحتى رطوبة المعمل."
   },
   "button": {
    "en": "Join the pilot",
@@ -27,23 +27,23 @@
  "ribbon": [
   {
    "en": "Arabic + English in one sentence",
-   "ar": "عربي وإنجليزي في جملة وحدة"
+   "ar": ""
   },
   {
    "en": "Voice stays on your laptop",
-   "ar": "صوتك يبقى على لابتوبك"
+   "ar": ""
   },
   {
    "en": "Plain Obsidian notes",
-   "ar": "ملاحظات Obsidian عادية"
+   "ar": ""
   },
   {
    "en": "Replies on Telegram",
-   "ar": "يرد عليك في تيليجرام"
+   "ar": ""
   },
   {
    "en": "Notes → Word, PowerPoint, Excel",
-   "ar": "ملاحظات ← Word وPowerPoint وExcel"
+   "ar": ""
   }
  ],
  "sections": [
@@ -68,7 +68,7 @@
      "icon": "🧤",
      "title": {
       "en": "Gloves on",
-      "ar": "يدك في القفاز"
+      "ar": "يدك مشغولة"
      },
      "text": {
       "en": "Your hands are in the glovebox or on a pipette. Writing has to wait.",
@@ -83,7 +83,7 @@
      },
      "text": {
       "en": "The film is on the hot plate. You'll write it after, and the exact time slips away.",
-      "ar": "الفيلم على الـ hot plate. بتكتبها بعدين، والوقت بالضبط يطير."
+      "ar": "العينة على الـنار، المؤقت تحفظه؟ بعدين الوقت بالضبط يطير."
      }
     },
     {
@@ -146,7 +146,7 @@
      },
      "text": {
       "en": "Sample, step, values with units, defects, colour. Anything missing gets flagged.",
-      "ar": "العينة والخطوة والقيم بوحداتها والعيوب واللون. وأي شي ناقص ينبّهك عليه."
+      "ar": "العينة والخطوة والقيم بوحداتها والعيوب واللون."
      }
     },
     {
@@ -157,7 +157,7 @@
      },
      "text": {
       "en": "It lands in that day's note with the original audio, and the bot replies so you can fix it on the spot.",
-      "ar": "ينكتب في لوق يومه مع التسجيل الأصلي، والبوت يرد عليك عشان تصحّح على طول."
+      "ar": "ينكتب في دفترك اليومي مع التسجيل الأصلي، والبوت يرد عليك عشان تصحّح على طول."
      }
     }
    ]
@@ -172,7 +172,7 @@
    },
    "lead": {
     "en": "Send a question by voice or text, in Arabic or English. Oxide searches your notes and your Zotero library and answers with the sources.",
-    "ar": "أرسل سؤالك بصوتك أو بالكتابة، بالعربي أو الإنجليزي. Oxide يدوّر في ملاحظاتك ومكتبة Zotero، ويجاوبك مع المصادر."
+    "ar": "أرسل سؤالك بصوتك أو بالكتابة، بالعربي أو الإنجليزي. Oxide يدوّر في ملاحظاتك ومكتبة Zotero."
    },
    "badge": {
     "en": "",
@@ -187,7 +187,7 @@
      },
      "text": {
       "en": "“Which samples had pinholes this week?” Oxide reads your logbook and tells you, with a link to each day.",
-      "ar": "«وش العينات اللي فيها فراغات هالأسبوع؟» يقرأ لوقاتك ويجاوبك، مع رابط لكل يوم."
+      "ar": "«وش العينات اللي فيها فراغات هالأسبوع؟» يقرأ ملاحظات ويجاوبك، مع رابط لكل يوم."
      },
      "tag": {
       "en": "Ask in your own words",
@@ -228,7 +228,7 @@
      },
      "text": {
       "en": "“Tasks today: order SnO₂, finish the methods chapter.” They land in your task list with dates. Say “done …” to tick one off.",
-      "ar": "«مهام اليوم: أطلب SnO₂ وأخلص فصل الطرق» تنضاف لقائمة مهامك بتواريخها. وقل «خلصت…» يعلّم عليها."
+      "ar": "«مهام اليوم: أخلص كتابة فصل من الرسالة اليوم، بكره أجهز العرض لمشرفي» تنضاف لقائمة مهامك بتواريخها. وقل «خلصت…» يعلّم عليها بـ صح."
      }
     }
    ]
@@ -280,7 +280,7 @@
      },
      "text": {
       "en": "Paste data from any instrument as a table, add formulas, and build an Excel file with live formulas or an Origin project with the plots.",
-      "ar": "تلصق بيانات أي جهاز كجدول، وتضيف معادلات، وتطلّع ملف Excel بمعادلات حقيقية أو مشروع Origin بالرسومات."
+      "ar": "تلصق أي بيانات وتتحول إلى جداول تلقائياً، وتقدر تضيف معادلات، وتطلّع ملف Excel أو Origin بالرسومات."
      }
     },
     {
@@ -291,14 +291,14 @@
      },
      "text": {
       "en": "Cite from your Zotero library while you write. References are formatted for you (APA, IEEE and more).",
-      "ar": "تستشهد من مكتبة Zotero وأنت تكتب، والمراجع تنسّق نفسها (APA وIEEE وغيرها)."
+      "ar": "تستشهد من مكتبة Zotero وأنت تكتب الرسالة أو العرض أو حتى مقالة في موقعك!، والمراجع تنسّق نفسها (APA وIEEE وغيرها)."
      }
     },
     {
      "icon": "📓",
      "title": {
       "en": "Daily logbook",
-      "ar": "لوق يومي"
+      "ar": "دفتر ملاحظات يومي"
      },
      "text": {
       "en": "Each day gets a logbook page: your voice notes, results, problems and next steps, all searchable.",
@@ -324,7 +324,7 @@
    "bg": "grey",
    "title": {
     "en": "Why “Oxide”?",
-    "ar": "ليش «Oxide»؟"
+    "ar": "ليش إسم \"Oxide"
    },
    "lead": {
     "en": "Oxides are some of the most stable materials we make. Oxide gives your notes the same stability: everything recorded, nothing lost.",
@@ -361,7 +361,7 @@
      },
      "text": {
       "en": "Parameters and observations, sorted into fields.",
-      "ar": "القيم والملاحظات، مرتبة في حقول."
+      "ar": "القيم والملاحظات، مرتبة."
      },
      "tag": {
       "en": "(just talk)",
@@ -444,7 +444,7 @@
      },
      "text": {
       "en": "Press to talk; it confirms what it saved.",
-      "ar": "اضغط وتكلّم، ويأكد لك وش حفظ."
+      "ar": "تكلّم مباشرة ما يحتاج تضغط، ويأكد لك وش حفظ ويتسجل."
      }
     },
     {
@@ -466,7 +466,7 @@
      },
      "text": {
       "en": "Every note timestamped, offline too.",
-      "ar": "كل ملاحظة بوقتها، حتى بدون نت."
+      "ar": "كل ملاحظة بوقتها، بدون نت."
      }
     },
     {
@@ -499,111 +499,7 @@
      },
      "text": {
       "en": "Clips to your lab coat for the whole day.",
-      "ar": "تعلّقه على البالطو طول اليوم."
-     }
-    }
-   ]
-  },
-  {
-   "id": "labs",
-   "layout": "cards",
-   "bg": "white",
-   "title": {
-    "en": "One lab, many notebooks",
-    "ar": "معمل واحد، ودفاتر كثيرة"
-   },
-   "lead": {
-    "en": "Each student keeps their own notebook and shares the lab parts. Supervisors see progress without chasing anyone.",
-    "ar": "كل طالب يحتفظ بدفتره ويشارك أجزاء المعمل. والمشرف يشوف التقدم بدون ما يلاحق أحد."
-   },
-   "badge": {
-    "en": "Next",
-    "ar": "قادم"
-   },
-   "items": [
-    {
-     "icon": "🎓",
-     "title": {
-      "en": "Supervisor",
-      "ar": "المشرف"
-     },
-     "text": {
-      "en": "Sees every student's log, meetings and samples; comments and assigns tasks.",
-      "ar": "يشوف لوقات الطلاب واجتماعاتهم وعيناتهم، ويعلّق ويعطي مهام."
-     }
-    },
-    {
-     "icon": "🧰",
-     "title": {
-      "en": "Lab manager",
-      "ar": "مسؤول المعمل"
-     },
-     "text": {
-      "en": "Keeps protocols, the shared glossary and lab-wide sample IDs.",
-      "ar": "يدير البروتوكولات والقاموس المشترك وأرقام العينات."
-     }
-    },
-    {
-     "icon": "🔬",
-     "title": {
-      "en": "Student",
-      "ar": "الطالب"
-     },
-     "text": {
-      "en": "Owns their notebook. Shares lab notes, keeps ideas private.",
-      "ar": "يملك دفتره. يشارك ملاحظات المعمل، ويخلي أفكاره خاصة."
-     }
-    }
-   ]
-  },
-  {
-   "id": "privacy",
-   "layout": "cards",
-   "bg": "grey",
-   "title": {
-    "en": "Your notes stay yours",
-    "ar": "ملاحظاتك تبقى لك"
-   },
-   "lead": {
-    "en": "",
-    "ar": ""
-   },
-   "badge": {
-    "en": "",
-    "ar": ""
-   },
-   "items": [
-    {
-     "icon": "🔒",
-     "title": {
-      "en": "Voice stays local",
-      "ar": "الصوت يبقى عندك"
-     },
-     "text": {
-      "en": "Speech-to-text runs on your laptop. Audio is not uploaded.",
-      "ar": "التحويل لنص على لابتوبك. الصوت ما ينرفع."
-     }
-    },
-    {
-     "icon": "📝",
-     "title": {
-      "en": "Plain Markdown",
-      "ar": "ملفات عادية"
-     },
-     "text": {
-      "en": "Everything is an Obsidian note you can open, back up or take with you.",
-      "ar": "كل شي ملاحظة Obsidian تفتحها وتاخذ منها نسخة وتطلع فيها متى ما بغيت."
-     }
-    },
-    {
-     "icon": "🧠",
-     "title": {
-      "en": "AI is optional",
-      "ar": "الذكاء اختياري"
-     },
-     "text": {
-      "en": "Summaries use your own Claude key and send text only.",
-      "ar": "الملخصات بمفتاح Claude حقك، وترسل نص بس."
+      "ar": "تقدر تعلقه في اللاب كوت طول اليوم."
      }
     }
    ]
@@ -680,7 +576,7 @@
   },
   "text": {
    "en": "We're looking for a few research groups in materials science, chemistry and engineering to use Oxide for a month and tell us what breaks.",
-   "ar": "ندوّر على مجموعات بحثية قليلة في علوم المواد والكيمياء والهندسة تستخدم Oxide شهر، وتقول لنا وش يخرب."
+   "ar": "ندوّر على أفراد ومجموعات بحثية في علوم المواد والكيمياء والهندسة تستخدم Oxide شهر، وتقول لنا وش يخرب ووش حابين يضيفو."
   },
   "email": "anasqalasi@gmail.com",
   "bullets": [
@@ -701,7 +597,7 @@
  },
  "footer": {
   "en": "Built by a materials-science researcher, for the people at the bench.",
-  "ar": "بناه باحث في علوم المواد، للناس اللي عند الطاولة."
+  "ar": "بناه باحث في علوم المواد، للناس الي تنسى تكتب ملاحظاتها."
  },
  "pages": [
   {
