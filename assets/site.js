@@ -5,7 +5,7 @@
   /* Arabic only for now: the audience is Arabic-speaking researchers. English text stays in content.json for later. */
   var data = null, lang = 'ar', mode = 'home';
   var EDIT = /[?&]edit(?:=|&|$)/.test(location.search);
-  function tx(o) { return o ? (o[lang] || (EDIT ? '' : o.en) || '') : ''; }
+  function tx(o) { return o ? (o[lang] || '') : ''; }  /* an empty Arabic field hides the text instead of showing the English */
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   var L = function (en, ar) { return lang === 'ar' ? ar : en; };
   var main = document.getElementById('top');
@@ -95,7 +95,7 @@
     var img = el('img', 'mascot'); img.src = 'assets/logo.svg'; img.alt = L('The Oxide panda in a lab coat holding a flask', 'باندا Oxide بالبالطو ماسك قارورة معمل'); hw.append(img);
     h.append(hw); main.append(h);
 
-    if ((data.ribbon && data.ribbon.length) || EDIT) {
+    if ((data.ribbon || []).some(function (x) { return tx(x); }) || EDIT) {
       var r = el('div', 'ribbon'), rw = el('div', 'wrap'); r.dataset.block = 'ribbon';
       (data.ribbon || []).forEach(function (x, i) { var s = bound('span', 'rib', 'ribbon.' + i, x, L('Phrase', 'عبارة')); if (s) { s.dataset.i = i; rw.append(s); } });
       r.append(rw); main.append(r);

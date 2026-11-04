@@ -9,6 +9,7 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 section{padding-block:72px}
@@ -31,7 +32,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdro
 .lang{font:inherit;font-size:14px;padding:7px 12px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--ink);cursor:pointer}
 .btn{display:inline-flex;align-items:center;font-family:var(--display);font-weight:600;font-size:15px;padding:12px 20px;border-radius:999px;background:var(--blue);color:#fff;text-decoration:none;border:0;cursor:pointer}
 .btn:hover{background:var(--blue-d)}
-@media (max-width:700px){.links{order:3;width:100%;margin:0 0 10px;gap:14px}.nav #navcta{margin-inline-start:auto}}
+@media (max-width:700px){.nav{padding-block:8px}.links{order:3;width:100%;margin:0 0 4px;gap:14px}.nav #navcta{margin-inline-start:auto}}
 
 .hero{padding-block:84px 76px;background:linear-gradient(180deg,var(--blue-t),#fff 85%)}
 .pill{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:600;font-size:14px;padding:6px 14px;border-radius:999px;background:#fff;border:1.5px solid var(--line)}
@@ -73,7 +74,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdro
 .fld input:focus,.fld select:focus,.fld textarea:focus{outline:2px solid var(--blue);outline-offset:-1px;border-color:transparent}
 .consent{display:flex;gap:10px;align-items:flex-start;margin:14px 0;font-size:13.5px;color:var(--ink-2);line-height:1.6}
 .consent input{margin-top:4px;width:18px;height:18px;flex:none;accent-color:var(--blue)}
-.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.hp{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;opacity:0}
 .fmsg{margin-top:10px;font-size:14px}.fmsg.ok{color:#0B7D71}.fmsg.err{color:#B4232A}
 @media (max-width:860px){.pilot{grid-template-columns:1fr}}
 
