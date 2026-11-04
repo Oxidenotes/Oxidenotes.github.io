@@ -83,7 +83,7 @@
      },
      "text": {
       "en": "The film is on the hot plate. You'll write it after, and the exact time slips away.",
-      "ar": "العينة على الـنار، المؤقت تحفظه؟ بعدين الوقت بالضبط يطير."
+      "ar": "العينة على الـنار، المؤقت نسيته؟ بعدين الوقت بالضبط يطير."
      }
     },
     {
@@ -124,7 +124,7 @@
      },
      "text": {
       "en": "Press the device button or send a Telegram voice note. Arabic, English, or both.",
-      "ar": "اضغط زر الجهاز أو أرسل رسالة صوتية في تيليجرام. عربي أو إنجليزي، أو الاثنين."
+      "ar": "تكلم أو أرسل رسالة صوتية أو أعمل forward في تيليجرام. عربي أو إنجليزي، أو الاثنين."
      }
     },
     {
@@ -146,7 +146,7 @@
      },
      "text": {
       "en": "Sample, step, values with units, defects, colour. Anything missing gets flagged.",
-      "ar": "العينة والخطوة والقيم بوحداتها والعيوب واللون."
+      "ar": "العينة والخطوة والقيم بوحداتها والعيوب واللون وكل شيء تقوله."
      }
     },
     {
@@ -258,7 +258,7 @@
      },
      "text": {
       "en": "Write chapters as notes. One click builds a Word file in your university's template: numbered headings, figures and tables, equations, and the reference list.",
-      "ar": "تكتب الفصول كملاحظات، وبضغطة يطلع ملف Word بقالب جامعتك: عناوين مرقّمة، وصور وجداول، ومعادلات، وقائمة المراجع."
+      "ar": "تكتب الفصول كملاحظات، وبضغطة زر يطلع ملف Word بقالب جامعتك: عناوين مرقّمة، وصور وجداول، ومعادلات، وقائمة المراجع."
      }
     },
     {
@@ -324,11 +324,11 @@
    "bg": "grey",
    "title": {
     "en": "Why “Oxide”?",
-    "ar": "ليش اسم «Oxide»؟"
+    "ar": "ليش اسم \"Oxide"
    },
    "lead": {
     "en": "Oxides are some of the most stable materials we make. Oxide gives your notes the same stability: everything recorded, nothing lost.",
-    "ar": "الأكاسيد من أكثر المواد استقراراً. وOxide يعطي ملاحظاتك نفس الاستقرار: كل شي يتسجّل، وما يضيع شي."
+    "ar": "الأكاسيد من أكثر المواد استقراراً. وOxide يعطي ملاحظاتك نفس الاستقرار: كل شي يتسجّل، وما يضيع شيء."
    },
    "badge": {
     "en": "",
@@ -342,7 +342,7 @@
    "bg": "white",
    "title": {
     "en": "Start with the type. Oxide files it.",
-    "ar": "ابدأ بالنوع، وOxide يحطها في مكانها."
+    "ar": "ابدأ بنوع الملاحظة، وOxide يحطها في مكانها."
    },
    "lead": {
     "en": "",
@@ -409,7 +409,7 @@
      },
      "text": {
       "en": "A titled idea with a next step, before it flies away.",
-      "ar": "فكرة لها عنوان وخطوة جاية، قبل ما تطير."
+      "ar": "فكرة لها عنوان وخطوت الجاية، قبل ما تطير."
      },
      "tag": {
       "en": "“Idea: …”",
@@ -549,21 +549,6 @@
      "tag": {
       "en": "In development",
       "ar": "قيد التطوير"
-     }
-    },
-    {
-     "icon": "🏫",
-     "title": {
-      "en": "Later",
-      "ar": "لاحقاً"
-     },
-     "text": {
-      "en": "Lab server with roles and a supervisor dashboard.",
-      "ar": "سيرفر للمعمل بالأدوار ولوحة للمشرف."
-     },
-     "tag": {
-      "en": "Planned",
-      "ar": "مخطط"
      }
     }
    ]
