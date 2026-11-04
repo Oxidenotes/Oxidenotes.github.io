@@ -2,7 +2,7 @@
  * Oxide pilot sign-ups → Google Sheet.
  * 1. Make a Google Sheet, then Extensions → Apps Script, paste this file, Save.
  * 2. Deploy → New deployment → type "Web app" → Execute as: Me → Who has access: Anyone → Deploy.
- * 3. Copy the Web app URL (…/exec) into the Oxide admin: «التواصل وآخر الصفحة» → رابط استقبال نموذج التسجيل.
+ * 3. Copy the Web app URL (…/exec) into content.json → pilot.form_url.
  */
 var FIELDS = ['name', 'email', 'role', 'university', 'field', 'obsidian', 'note', 'lang', 'page'];
 

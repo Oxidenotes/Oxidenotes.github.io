@@ -696,7 +696,8 @@
     "en": "Does your group use Obsidian?",
     "ar": "هل مجموعتك تستخدم Obsidian؟"
    }
-  ]
+  ],
+  "form_url": "https://script.google.com/macros/s/AKfycbxchKadxoqeNKidPvhOQ1J_6Gv5H2fRnqYju0zlkb25QU1BoehZHDub9Tm9BBeftpElZg/exec"
  },
  "footer": {
   "en": "Built by a materials-science researcher, for the people at the bench.",
