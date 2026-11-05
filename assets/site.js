@@ -2,9 +2,9 @@
    index.html calls Oxide.home(), page.html calls Oxide.page().
    Add ?edit to any page URL to edit it in place (assets/editor.js). */
 (function () {
-  /* Arabic first (the main audience); English for visitors whose browser is in another language, or who switch */
-  var data = null, lang = 'ar', mode = 'home';
-  try { lang = localStorage.getItem('oxide-lang') || (/^ar/.test(navigator.language || 'ar') ? 'ar' : 'en'); } catch (e) {}
+  /* English first; Arabic one click away (or ?lang=ar) */
+  var data = null, lang = 'en', mode = 'home';
+  try { lang = localStorage.getItem('oxide-lang') || 'en'; } catch (e) { lang = 'en'; }
   var q = new URLSearchParams(location.search).get('lang'); if (q === 'en' || q === 'ar') lang = q;
   var EDIT = /[?&]edit(?:=|&|$)/.test(location.search);
   function tx(o) { return o ? (o[lang] || '') : ''; }  /* an empty field hides the text instead of showing the other language */
