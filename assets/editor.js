@@ -2,7 +2,7 @@
    Click any text to change it; every section and card is a block with its own buttons.
    "Save & publish" writes content.json to GitHub with your own token (kept in this browser only). */
 (function () {
-  var REPO = 'anasbq/Oxide.github.io', BRANCH = 'main', PATH = 'content.json';
+  var REPO = 'Oxidenotes/Oxidenotes.git.io', BRANCH = 'main', PATH = 'content.json';
   var KEY = 'oxide_admin_token', DRAFT = 'oxide_draft';
   var api, sha = null, dirty = false, hist = [], bar, saveBtn, undoBtn, stateEl, langEl;
 

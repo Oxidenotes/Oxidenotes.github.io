@@ -1,6 +1,6 @@
 # Oxide website
 
-Voice lab notebook for researchers — https://anasbq.github.io/Oxide.github.io/
+Voice lab notebook for researchers — https://oxidenotes.github.io/
 
 - `index.html` — home page, drawn from `content.json`
 - `page.html?p=<slug>` — extra pages (also in `content.json`, written in Markdown)
