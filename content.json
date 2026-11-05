@@ -12,11 +12,11 @@
    "ar": "شغّال اليوم في Obsidian وتيليجرام"
   },
   "title": {
-   "en": "Talk to your lab notebook.",
+   "en": "Talk to your notebook.",
    "ar": "كلّم دفتر ملاحظاتك."
   },
   "text": {
-   "en": "Press, speak, keep working. Oxide turns what you say at the bench into a neat entry in your logbook: sample, step, temperature, time, defects, even the lab's humidity.",
+   "en": "Talk and keep working. Oxide turns what you say into notes in your notebook: sample, step, temperature, time, defects, even the lab's humidity.",
    "ar": "تكلّم وكمّل شغلك وOxide يحوّل كلامك إلى ملاحظات في دفترك: العينة والخطوة والحرارة والمدة والعيوب، وحتى رطوبة المعمل."
   },
   "button": {
@@ -24,28 +24,7 @@
    "ar": "انضم للتجربة"
   }
  },
- "ribbon": [
-  {
-   "en": "Arabic + English in one sentence",
-   "ar": ""
-  },
-  {
-   "en": "Voice stays on your laptop",
-   "ar": ""
-  },
-  {
-   "en": "Plain Obsidian notes",
-   "ar": ""
-  },
-  {
-   "en": "Replies on Telegram",
-   "ar": ""
-  },
-  {
-   "en": "Notes → Word, PowerPoint, Excel",
-   "ar": ""
-  }
- ],
+ "ribbon": [],
  "sections": [
   {
    "id": "problem",
@@ -67,7 +46,7 @@
     {
      "icon": "🧤",
      "title": {
-      "en": "Gloves on",
+      "en": "Hands busy",
       "ar": "يدك مشغولة"
      },
      "text": {
@@ -82,7 +61,7 @@
       "ar": "المؤقت شغّال"
      },
      "text": {
-      "en": "The film is on the hot plate. You'll write it after, and the exact time slips away.",
+      "en": "The sample is on the heat. Did you note the timer? Later, the exact time is gone.",
       "ar": "العينة على الـنار، المؤقت نسيته؟ بعدين الوقت بالضبط يطير."
      }
     },
@@ -123,7 +102,7 @@
       "ar": "تكلّم"
      },
      "text": {
-      "en": "Press the device button or send a Telegram voice note. Arabic, English, or both.",
+      "en": "Just talk, send a voice note, or forward one in Telegram. Arabic, English, or both.",
       "ar": "تكلم أو أرسل رسالة صوتية أو أعمل forward في تيليجرام. عربي أو إنجليزي، أو الاثنين."
      }
     },
@@ -145,7 +124,7 @@
       "ar": "يترتّب"
      },
      "text": {
-      "en": "Sample, step, values with units, defects, colour. Anything missing gets flagged.",
+      "en": "Sample, step, values with units, defects, colour, and anything else you say.",
       "ar": "العينة والخطوة والقيم بوحداتها والعيوب واللون وكل شيء تقوله."
      }
     },
@@ -156,7 +135,7 @@
       "ar": "يتسجّل"
      },
      "text": {
-      "en": "It lands in that day's note with the original audio, and the bot replies so you can fix it on the spot.",
+      "en": "It lands in your daily notebook with the original audio, and the bot replies so you can fix it on the spot.",
       "ar": "ينكتب في دفترك اليومي مع التسجيل الأصلي، والبوت يرد عليك عشان تصحّح على طول."
      }
     }
@@ -171,7 +150,7 @@
     "ar": "اسأل Oxide عن أي شي في شغلك"
    },
    "lead": {
-    "en": "Send a question by voice or text, in Arabic or English. Oxide searches your notes and your Zotero library and answers with the sources.",
+    "en": "Send a question by voice or text, in Arabic or English. Oxide searches your notes and your Zotero library.",
     "ar": "أرسل سؤالك بصوتك أو بالكتابة، بالعربي أو الإنجليزي. Oxide يدوّر في ملاحظاتك ومكتبة Zotero."
    },
    "badge": {
@@ -186,7 +165,7 @@
       "ar": "يدوّر في ملاحظاتك"
      },
      "text": {
-      "en": "“Which samples had pinholes this week?” Oxide reads your logbook and tells you, with a link to each day.",
+      "en": "“Which samples had pinholes this week?” Oxide reads your notes and tells you, with a link to each day.",
       "ar": "«وش العينات اللي فيها فراغات هالأسبوع؟» يقرأ ملاحظات ويجاوبك، مع رابط لكل يوم."
      },
      "tag": {
@@ -227,7 +206,7 @@
       "ar": "المهام بصوتك"
      },
      "text": {
-      "en": "“Tasks today: order SnO₂, finish the methods chapter.” They land in your task list with dates. Say “done …” to tick one off.",
+      "en": "“Tasks: finish a thesis chapter today, prepare the slides for my supervisor tomorrow.” They land in your task list with dates. Say “done …” to tick one off.",
       "ar": "«مهام اليوم: أخلص كتابة فصل من الرسالة اليوم، بكره أجهز العرض لمشرفي» تنضاف لقائمة مهامك بتواريخها. وقل «خلصت…» يعلّم عليها بـ صح."
      }
     }
@@ -279,7 +258,7 @@
       "ar": "الجداول → Excel وOrigin"
      },
      "text": {
-      "en": "Paste data from any instrument as a table, add formulas, and build an Excel file with live formulas or an Origin project with the plots.",
+      "en": "Paste any data and it becomes a table. Add formulas, and export an Excel or Origin file with the plots.",
       "ar": "تلصق أي بيانات وتتحول إلى جداول تلقائياً، وتقدر تضيف معادلات، وتطلّع ملف Excel أو Origin بالرسومات."
      }
     },
@@ -290,14 +269,14 @@
       "ar": "استشهادات Zotero"
      },
      "text": {
-      "en": "Cite from your Zotero library while you write. References are formatted for you (APA, IEEE and more).",
+      "en": "Cite from your Zotero library while you write your thesis, your slides, or even an article on your website. References format themselves (APA, IEEE and more).",
       "ar": "تستشهد من مكتبة Zotero وأنت تكتب الرسالة أو العرض أو حتى مقالة في موقعك!، والمراجع تنسّق نفسها (APA وIEEE وغيرها)."
      }
     },
     {
      "icon": "📓",
      "title": {
-      "en": "Daily logbook",
+      "en": "Daily notebook",
       "ar": "دفتر ملاحظات يومي"
      },
      "text": {
@@ -324,7 +303,7 @@
    "bg": "grey",
    "title": {
     "en": "Why “Oxide”?",
-    "ar": "ليش اسم \"Oxide"
+    "ar": "ليش اسم «Oxide»؟"
    },
    "lead": {
     "en": "Oxides are some of the most stable materials we make. Oxide gives your notes the same stability: everything recorded, nothing lost.",
@@ -360,7 +339,7 @@
       "ar": "ملاحظة معمل"
      },
      "text": {
-      "en": "Parameters and observations, sorted into fields.",
+      "en": "Parameters and observations, sorted.",
       "ar": "القيم والملاحظات، مرتبة."
      },
      "tag": {
@@ -408,7 +387,7 @@
       "ar": "فكرة"
      },
      "text": {
-      "en": "A titled idea with a next step, before it flies away.",
+      "en": "A titled idea with its next step, before it flies away.",
       "ar": "فكرة لها عنوان وخطوت الجاية، قبل ما تطير."
      },
      "tag": {
@@ -443,7 +422,7 @@
       "ar": "مايك وسماعة"
      },
      "text": {
-      "en": "Press to talk; it confirms what it saved.",
+      "en": "Just talk, no button needed. It confirms what it saved.",
       "ar": "تكلّم مباشرة ما يحتاج تضغط، ويأكد لك وش حفظ ويتسجل."
      }
     },
@@ -465,7 +444,7 @@
       "ar": "ساعة دقيقة"
      },
      "text": {
-      "en": "Every note timestamped, offline too.",
+      "en": "Every note timestamped, no internet needed.",
       "ar": "كل ملاحظة بوقتها، بدون نت."
      }
     },
@@ -498,7 +477,7 @@
       "ar": "بطارية"
      },
      "text": {
-      "en": "Clips to your lab coat for the whole day.",
+      "en": "Clip it to your lab coat for the whole day.",
       "ar": "تقدر تعلقه في اللاب كوت طول اليوم."
      }
     }
@@ -560,7 +539,7 @@
    "ar": "جرّب Oxide في معملك"
   },
   "text": {
-   "en": "We're looking for a few research groups in materials science, chemistry and engineering to use Oxide for a month and tell us what breaks.",
+   "en": "We're looking for researchers and research groups in materials science, chemistry and engineering to use Oxide for a month and tell us what breaks and what they'd like added.",
    "ar": "ندوّر على أفراد ومجموعات بحثية في علوم المواد والكيمياء والهندسة تستخدم Oxide شهر، وتقول لنا وش يخرب ووش حابين يضيفو."
   },
   "email": "anasqalasi@gmail.com",
@@ -581,7 +560,7 @@
   "form_url": "https://script.google.com/macros/s/AKfycbxchKadxoqeNKidPvhOQ1J_6Gv5H2fRnqYju0zlkb25QU1BoehZHDub9Tm9BBeftpElZg/exec"
  },
  "footer": {
-  "en": "Built by a materials-science researcher, for the people at the bench.",
+  "en": "Built by a materials-science researcher, for people who forget to write their notes down.",
   "ar": "بناه باحث في علوم المواد، للناس الي تنسى تكتب ملاحظاتها."
  },
  "pages": [
@@ -593,7 +572,7 @@
     "ar": "عن Oxide"
    },
    "body": {
-    "en": "## Why we built Oxide\n\nOxide started in a materials-science lab, where notes kept getting lost between the glovebox and the hot plate.\n\nIt is a voice lab notebook: you speak, and the note lands in your Obsidian logbook with the sample, step, values and units.\n\n- Works in Arabic, English, or both\n- Speech-to-text runs on your own laptop\n- Your notes stay plain Markdown files",
+    "en": "## Why we built Oxide\n\nOxide started in a materials-science lab, where notes kept getting lost between the glovebox and the hot plate, because you can't write and work at the same time.\n\nOxide is a voice lab notebook: you speak, and the note lands in your Obsidian notebook with the sample, step, values and units.\n\n- Works in Arabic, English, or both\n- Speech-to-text runs on your own computer\n- Your notes stay plain Markdown files",
     "ar": "## ليش بنينا Oxide\n\nOxide بدأ في معمل علوم المواد، كانت الملاحظات فيه تضيع بين الـ glovebox والـ hot plate لأننا ما نقدر نكتب ونشتغل بنفس الوقت.\n\nOxide هو دفتر معمل صوتي: تتكلم، والملاحظة تنكتب في دفترك على Obsidian بالعينة والخطوة والقيم ووحداتها.\n\n- يشتغل بالعربي والإنجليزي، أو الاثنين\n- التحويل لنص على جهازك\n- ملاحظاتك تبقى ملفات Markdown عادية"
    }
   }

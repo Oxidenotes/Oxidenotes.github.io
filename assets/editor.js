@@ -45,7 +45,7 @@
     stateEl.textContent = dirty ? '● تعديلات ما انتشرت' : '✓ كل شيء منشور';
     stateEl.className = 'oxstate' + (dirty ? ' dirty' : '');
     saveBtn.disabled = !dirty;
-    langEl.textContent = '';
+    langEl.textContent = api.lang === 'ar' ? 'تعدّل النسخة العربية' : 'تعدّل النسخة الإنجليزية';
   }
   /* a structural change: remember the old state, apply, redraw */
   function op(fn) { snap(); fn(); changed(); api.render(); }
@@ -152,7 +152,7 @@
   }
 
   function mdPanel(path, target) {
-    var b = openPanel('✍️ نص الصفحة');
+    var b = openPanel('✍️ نص الصفحة (' + (api.lang === 'ar' ? 'عربي' : 'English') + ')');
     b.append(el('p', 'oxhint', 'Markdown: ## عنوان · **عريض** · - نقطة · [رابط](https://…) · > ملاحظة. التغيير يبان على الصفحة وأنت تكتب.'));
     var w = walk(path, true), cur = w.obj[w.key] || {}, ta = el('textarea', 'oxin oxmd');
     ta.value = (typeof cur === 'string' ? cur : cur[api.lang]) || ''; ta.dir = api.lang === 'ar' ? 'rtl' : 'ltr';

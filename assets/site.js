@@ -2,10 +2,12 @@
    index.html calls Oxide.home(), page.html calls Oxide.page().
    Add ?edit to any page URL to edit it in place (assets/editor.js). */
 (function () {
-  /* Arabic only for now: the audience is Arabic-speaking researchers. English text stays in content.json for later. */
+  /* Arabic first (the main audience); English for visitors whose browser is in another language, or who switch */
   var data = null, lang = 'ar', mode = 'home';
+  try { lang = localStorage.getItem('oxide-lang') || (/^ar/.test(navigator.language || 'ar') ? 'ar' : 'en'); } catch (e) {}
+  var q = new URLSearchParams(location.search).get('lang'); if (q === 'en' || q === 'ar') lang = q;
   var EDIT = /[?&]edit(?:=|&|$)/.test(location.search);
-  function tx(o) { return o ? (o[lang] || '') : ''; }  /* an empty Arabic field hides the text instead of showing the English */
+  function tx(o) { return o ? (o[lang] || '') : ''; }  /* an empty field hides the text instead of showing the other language */
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   var L = function (en, ar) { return lang === 'ar' ? ar : en; };
   var main = document.getElementById('top');
@@ -27,6 +29,7 @@
     (data.pages || []).filter(function (p) { return p.nav !== false && p.slug; }).forEach(function (p) {
       var a = el('a', p.slug === here ? 'on' : '', tx(p.title) || p.slug); a.href = 'page.html?p=' + encodeURIComponent(p.slug); links.append(a);
     });
+    document.getElementById('lang').textContent = lang === 'ar' ? 'English' : 'عربي';
     var cta = document.getElementById('navcta'); cta.textContent = tx(data.hero && data.hero.button) || L('Join the pilot', 'انضم للتجربة'); cta.href = mode === 'home' ? '#pilot' : './#pilot';
     var foot = document.getElementById('foot'); foot.textContent = tx(data.footer); foot.dataset.p = 'footer';
     var d = document.querySelector('meta[name=description]'); if (d && data.site) d.content = tx(data.site.description);
@@ -158,6 +161,7 @@
 
   function render() { var y = scrollY; chrome(); if (mode === 'page') page(); else home(); if (EDIT && window.OxideEditor) OxideEditor.decorate(); if (EDIT) scrollTo(0, y); }
   document.getElementById('yr').textContent = new Date().getFullYear();
+  document.getElementById('lang').onclick = function () { lang = lang === 'ar' ? 'en' : 'ar'; try { localStorage.setItem('oxide-lang', lang); } catch (e) {} if (data) render(); };
 
   function start(m) {
     mode = m;
